@@ -1,0 +1,13 @@
+version: "3"
+services:
+  geth:
+    image: ethereum/client-go:stable
+    command: --goerli --http --http.addr "0.0.0.0" --http.api "eth,net,web3" --authrpc.port 8551
+    ports:
+      - "30303:30303"
+      - "8545:8545"
+    volumes:
+      - geth-data:/root/.ethereum
+
+volumes:
+  geth-data:
