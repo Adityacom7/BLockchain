@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'geth'
+    static_configs:
+      - targets: ['host.docker.internal:6060']  # or EC2 IP if on different host
+
+  - job_name: 'node'
+    static_configs:
+      - targets: ['host.docker.internal:9100']  # or EC2 IP
